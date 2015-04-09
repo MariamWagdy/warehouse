@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_myhr_keeper,access.myhr.keeper,model_myhr_employee,myhr_keeper,0,0,0,0
+access_myhr_manager,access.myhr.manager,model_myhr_employee,myhr_manager,0,0,0,0
+access_myhr_super,access.myhr.super,model_myhr_employee,myhr_super,0,0,0,0
+access_myhr_member,access.myhr.member,model_myhr_employee,myhr_member,0,0,0,0
+access_myhr_employee,access.myhr.employee,model_myhr_employee,myhr_employee,0,0,0,0
+access_myhr_director,access.myhr.director,model_myhr_employee,myhr_director,1,0,0,0
+
+

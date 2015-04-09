@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.module.category" id="iti_cat">
+            <field name="name">Career</field>
+        </record>
+
+
+        <record model="res.groups" id="myhr_keeper" >
+            <field name="name">امين مخزن</field>
+            <field name="category_id" ref="iti_cat"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+
+        <record model="res.groups" id="myhr_manager" >
+            <field name="name">مدير مخزن</field>
+            <field name="category_id" ref="iti_cat"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('myhr_keeper'))]"/>
+        </record>
+
+
+ 	<record model="res.groups" id="myhr_super" >
+            <field name="name">مدير المخازن</field>
+            <field name="category_id" ref="iti_cat"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('myhr_manager'))]"/>
+        </record>
+
+
+
+	    <record model="res.groups" id="myhr_employee" >
+            <field name="name">موظف</field>
+            <field name="category_id" ref="iti_cat"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('myhr_super'))]"/>
+        </record>
+        <record model="res.groups" id="myhr_member" >
+            <field name="name">عضو لجنه</field>
+            <field name="category_id" ref="iti_cat"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('myhr_employee'))]"/>
+        </record>
+
+
+	    <record model="res.groups" id="myhr_director" >
+            <field name="name"> مدير  مجموعة من الموظفين</field>
+            <field name="category_id" ref="iti_cat"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('myhr_member'))]"/>
+        </record>
+		
+         
+
+
+    </data>
+</openerp>
