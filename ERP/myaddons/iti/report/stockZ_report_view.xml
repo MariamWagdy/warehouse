@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report id="report_stock_order"
+                model="stock.stock"
+                name="stock.stock.list"
+                string="Print Order"
+                file="report/session.mako"
+                report_type="webkit"/>
+
+    </data>
+</openerp>
+
+
+

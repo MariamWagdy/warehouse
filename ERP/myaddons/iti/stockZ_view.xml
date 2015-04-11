@@ -1,0 +1,67 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="stock_stock_tree">
+            <field name="name">stock_stock_tree</field>
+            <field name="model">stock.stock</field >
+            <field name="arch" type="xml">
+                <tree string="data">
+                    <field name="stockName"/>
+                    <field name="quantity"/>
+                    <field name="notes"/>
+                </tree>
+
+            </field>
+        </record>
+
+
+
+        <!--form-->
+            <record model="ir.ui.view" id="stock_stock_form">
+            <field name="name">stock_stock_form</field>
+            <field name="model">stock.stock</field >
+            <field name="arch" type="xml">
+                <form string="data" version="7.0">
+                    <sheet>
+
+                        <group string="Basic info">
+                            <field name="stockName"/>
+                            <!--<field name="product"/>-->
+                            <!--<field name="image" widget="image"/>-->
+                            <field name="quantity"/>
+                        </group>
+
+                    <notebook>
+                        <page string="info">
+                            <group string="Notes">
+                                <field name="notes"/>
+                            </group>
+                        </page>
+
+                    </notebook>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+         <record model="ir.actions.act_window" id="stock_stock_action">
+            <field name="name">Stock Stock</field>
+            <field name="res_model">stock.stock</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+
+        </record>
+
+
+        <menuitem name="Stock Data" id="top_stock_data"/>
+        <menuitem name="Stock Data" id="left_stock_data" parent="top_stock_data"/>
+        <menuitem name="S Data"
+                  parent="left_stock_data"
+                  id="left_down_stock_data"
+                  action="stock_stock_action"/>
+
+    </data>
+</openerp>
